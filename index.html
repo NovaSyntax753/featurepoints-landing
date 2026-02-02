@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Paid for the Things You Already Do Online | FeaturePoints</title>
+    <meta name="description" content="Join millions earning cash and gift cards by trying new apps, completing surveys, and shopping online. Start earning in minutes with code HSZDCR.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1E9DD8;
+            --dark-blue: #0D4A6B;
+            --gold: #FFB700;
+            --light-bg: #F7F9FC;
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-light: #6C7A89;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 80px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 183, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 183, 0, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-blue);
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 183, 0, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 183, 0, 0.4);
+            background: #FFC933;
+        }
+
+        .hero-visual {
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .promo-image {
+            max-width: 100%;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .promo-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .promo-image:active {
+            transform: scale(1.08);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .coin-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .coin {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(255, 183, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .coin:hover {
+            transform: scale(1.3);
+            box-shadow: 0 15px 35px rgba(255, 183, 0, 0.5);
+        }
+
+        .coin:active {
+            transform: scale(1.5);
+            box-shadow: 0 20px 45px rgba(255, 183, 0, 0.6);
+        }
+
+        .coin:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .coin:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes coinFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: var(--light-bg);
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Reward Showcase */
+        .rewards {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .reward-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .reward-category {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .reward-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .reward-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .reward-category ul {
+            list-style: none;
+        }
+
+        .reward-category li {
+            padding: 8px 0;
+            color: var(--text-light);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .reward-category li:last-child {
+            border-bottom: none;
+        }
+
+        .reward-category li::before {
+            content: "✓ ";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Why FeaturePoints Section */
+        .why-fp {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .stats p {
+            font-size: 1.2rem;
+        }
+
+        /* Referral Bonus Section */
+        .referral-bonus {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1E9DD8 0%, #0D4A6B 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .referral-bonus::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 183, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .referral-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .referral-quote {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .referral-code-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        .referral-code-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .referral-code {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 80px 20px;
+            background: var(--light-bg);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+        }
+
+        .final-cta .micro-copy {
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 80px;
+            }
+
+            .steps,
+            .reward-grid,
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .coin {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .sticky-cta {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+
+            .promo-image {
+                max-width: 100%;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .hero-visual {
+                margin-top: 40px;
+            }
+        }
+
+        /* Animation for visibility */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta" id="stickyCTA">
+        <a href="https://featurepoints.com/@HSZDCR" class="cta-button">Join Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get Paid for the Things You Already Do Online</h1>
+                <p class="hero-subheadline">
+                    Join millions of users earning cash and gift cards by trying new apps, completing surveys, and shopping online. Start earning in minutes.
+                </p>
+                <a href="https://featurepoints.com/@HSZDCR" class="cta-button">Get Started & Claim Your Bonus</a>
+                
+                <div class="hero-visual">
+                    <img src="assets/WhatsApp Image 2026-02-02 at 12.13.35 PM.jpeg" alt="Earn up to 50% - FeaturePoints Referral" class="promo-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up for Free</h3>
+                    <p>Create your account in seconds using referral code <strong>HSZDCR</strong>. No credit card required.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Complete Simple Tasks</h3>
+                    <p>Discover new apps, take quick surveys, or earn cash back while shopping.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Get Rewarded</h3>
+                    <p>Exchange your points for PayPal cash, Bitcoin, or gift cards from your favorite brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reward Showcase Section -->
+    <section class="rewards">
+        <div class="container">
+            <h2 class="section-title">Choose Your Rewards</h2>
+            <div class="reward-grid">
+                <div class="reward-category">
+                    <h3>💵 Cash</h3>
+                    <ul>
+                        <li>PayPal Transfers</li>
+                        <li>Visa Prepaid Cards</li>
+                        <li>Direct Bank Deposits</li>
+                    </ul>
+                </div>
+                <div class="reward-category">
+                    <h3>🛍️ Retail</h3>
+                    <ul>
+                        <li>Amazon Gift Cards</li>
+                        <li>Walmart Gift Cards</li>
+                        <li>Target Gift Cards</li>
+                    </ul>
+                </div>
+                <div class="reward-category">
+                    <h3>🎮 Gaming</h3>
+                    <ul>
+                        <li>PlayStation Store</li>
+                        <li>Xbox Live</li>
+                        <li>Steam Wallet</li>
+                    </ul>
+                </div>
+                <div class="reward-category">
+                    <h3>₿ Crypto</h3>
+                    <ul>
+                        <li>Bitcoin Deposits</li>
+                        <li>Direct to Wallet</li>
+                        <li>Instant Transfers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why FeaturePoints Section -->
+    <section class="why-fp">
+        <div class="container">
+            <h2 class="section-title">Why FeaturePoints?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Instant Access</h3>
+                    <p>Available on iOS, Android, and Web. Start earning from any device, anywhere.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Proven Track Record</h3>
+                    <p>Over $6,000,000 paid out to users since 2012. Join a trusted community.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Maximum Flexibility</h3>
+                    <p>Earn from anywhere—during your commute, on your lunch break, or while relaxing at home.</p>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <h3>$6,000,000+</h3>
+                <p>Paid to users since 2012</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Bonus Section -->
+    <section class="referral-bonus">
+        <div class="container">
+            <div class="referral-content">
+                <p class="referral-quote">
+                    "I've been using FeaturePoints to monetize my downtime, and it's one of the most consistent platforms out there. By using my link, you'll be fast-tracked to start earning immediately."
+                </p>
+                
+                <div class="referral-code-box">
+                    <h3>Use My Referral Code</h3>
+                    <div class="referral-code">HSZDCR</div>
+                    <p style="margin-top: 15px; opacity: 0.9;">Get exclusive bonus points when you sign up!</p>
+                </div>
+                
+                <a href="https://featurepoints.com/@HSZDCR" class="cta-button">Join with My Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Don't Let Your Free Time Go to Waste</h2>
+            <a href="https://featurepoints.com/@HSZDCR" class="cta-button">Join FeaturePoints Now</a>
+            <p class="micro-copy">No credit card required. Free forever.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FeaturePoints Referral. Start earning today with code HSZDCR.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky CTA visibility on scroll
+        const stickyCTA = document.getElementById('stickyCTA');
+        const heroSection = document.querySelector('.hero');
+        
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            if (window.scrollY > heroBottom) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>
